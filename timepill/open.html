@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提取-时间胶囊-timepill</title>
+  <link rel="shortcut icon" href="./img/pill-icon.jpg">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/open.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="container">
+        <a href="" class="header-logo">时间胶囊</a>
+        <ul class="header-nav">
+          <li class="header-nav-item">
+            <a href="./index.html">首页</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="./put.html">添加</a>
+          </li>
+          <li class="header-nav-item nav-item-active">
+            <a href="./open.html">
+              打开
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="open-main">
+      <div class="open">
+        <h1 class="page-title">打开胶囊</h1>
+        <div class="open-input">
+          <label for="">胶囊Key: </label>
+          <input type="text" name="key" value id="key">
+          <div class="submit-btn">打开胶囊</div>
+        </div>
+      </div>
+      <div class="no-such-key" style="display: none;">
+        没有这个胶囊key
+      </div>
+      <div class="open-content">
+        <h2 class="pill-label">{{name}} 在 {{time}} 对你说：</h2>
+        <div class="pill-content">
+          {{info}}
+        </div>
+      </div>
+      <div class="open-tip">
+        <h2 class="pill-label">这颗胶囊未到提取时间，不能打开。</h2>
+        <br>
+        <p class="tips">打开时间在 <span>{{time}}</span> ，距离现在 <span>{{remainning time}} 秒</span></p>
+        <div class="pill-content">
+          <span>{{name}}</span> 给你留的提示信息：<span>{{tip}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./scripts/src/open.js" type="module"></script>
+</html>

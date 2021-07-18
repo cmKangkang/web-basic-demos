@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>详情</title>
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+  <div class="header">
+    <h4 class="page-title">详情</h4>
+  </div>
+  <div class="main">
+    <p>由于不能继续通过为已有三角形设置border的方法来为其设置边框（因为三角形本身就是利用border实现的），所以只好另想办法。而能想到的一个最自然的方法就是三角形叠放，即把当前三角形叠放在更大的三角形上方，上图所示的实现方法就是把黄色三角形放在了尺寸更大的蓝色三角形上。
+      
+      为了实现这样的效果，需要利用绝对定位方法：
+      
+      首先定义出外面的蓝色三角形：
+      
+      需要特别注意此时定义出的黄色三角形与蓝色三角形之间位置的偏移关系，该偏移将受到top、left（本例中）以及黄色三角形本身border宽度的共同影响。
+      可能会有这样的疑问：为什么黄色三角形会向左偏移一段距离呢，按道理不应该完全重合在蓝色三角形上吗，就像下面这样？
+      
+      对于黄色三角形，由于设置了left: 0和top: 0，所以黄色三角形的所有内容（包括border、margin）将根据蓝色三角形的上顶点进行定位。可以把此时left: 0和top: 0分别看作是两面“隔墙”——即上隔墙和左隔墙，黄色三角形的所有内容只能在上隔墙的下方和左隔墙的右方区域。
+      
+      由于黄色三角形的内容区域也位于其顶点处，且对其设置了左右各40px的border，所以黄色三角形的内容区域将向右偏移40px，从而形成了之前的效果。
+      
+      看将黄色三角形的位置设置为left: 0和bottom: 0,会得到怎样的定位效果？（下图所示）
+      </p>
+  </div>
+  <div class="footer">
+    <div class="buttons">
+      <div class="button" id="button-cart">
+        加入购物车
+      </div>
+      <div class="button" id="button-buy">
+        购买
+      </div>
+    </div>
+  </div>
+</body>
+</html>

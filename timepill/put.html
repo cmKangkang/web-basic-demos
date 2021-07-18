@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>添加-时间胶囊-timepill</title>
+  <link rel="shortcut icon" href="./img/pill-icon.jpg">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/put.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="container">
+        <a href="" class="header-logo">时间胶囊</a>
+        <ul class="header-nav">
+          <li class="header-nav-item">
+            <a href="./index.html">首页</a>
+          </li>
+          <li class="header-nav-item nav-item-active">
+            <a href="./put.html">添加</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="./open.html">
+              打开
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="put-main">
+      <h1 class="page-title">添加胶囊</h1>
+      <div class="form">
+        <div class="form-item">
+          <label for="name">你的名字</label>
+          <div class="err name-err" style="display: none;">名字 必须填写.</div>
+          <input type="text" name="name" value id="name">
+        </div>
+        <div class="form-item">
+          <label for="email">你的邮箱</label>
+          <!-- <div class="err email-err" style="display: none;">邮箱 必须填写.</div> -->
+          <!-- <div class="err email-err" style="display: none;">邮箱 必须是一个有效的电子邮箱地址.</div> -->
+          <input type="text" name="email" value id="email">
+        </div>
+        <div class="form-item">
+          <label for="time">打开时间</label>
+          <!-- <div class="err time-err" style="display: none;">打开时间 必须填写.</div> -->
+          <!-- <div class="err time-err" style="display: none;">打开时间 格式不正确.</div> -->
+          <input type="text" name="time" value id="time">
+          <span class="tips">打开时间之前，胶囊内容不可见。</span>
+        </div>
+        <div class="form-item">
+          <label for="info">胶囊内容</label>
+          <!-- <div class="err info-err" style="display: none;">打开时间 必须填写.</div> -->
+          <textarea name="info" value id="info" cols="50" rows="8"></textarea>
+          <span class="tips">胶囊内容不能超过5000字。</span>
+        </div>
+        <div class="form-item">
+          <label for="tip">未到日期提示信息</label>
+          <textarea name="tip" value id="tip" cols="50" rows="3"></textarea>
+          <span class="tips">在 打开时间 之前打开胶囊，会看到提示信息。</span>
+        </div>
+        <button class="submit-btn">添加胶囊</button>
+      </div>
+    </div>
+    <div class="put-done">
+      <h2 class="page-title">胶囊添加成功</h2>
+      <div class="form-item">
+        <label for="key">胶囊Key</label>
+        <input type="text" name="key" value id="key" disabled="disabled">
+        <span class="tips">你可以复制 key自己保存，也可以发送给你的好友，让他来打开胶囊。</span>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./scripts/src/put.js" type="module"></script>
+</html>
