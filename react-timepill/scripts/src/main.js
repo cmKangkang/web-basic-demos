@@ -10,14 +10,9 @@ class App extends React.Component {
             rootPath: 'index.html',
         };
         this.handleRouteChange = (to) => {
-            // console.log(to);
-            this.setState({
-                route: to
-            });
             location.hash = to;
         };
         this.setRoute = () => {
-            // console.log(location.pathname);
             let hash = location.hash.split('#')[1];
             let route = '/home';
             switch (hash) {

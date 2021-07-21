@@ -24,10 +24,6 @@ class App extends React.Component<any, State> {
   }
 
   handleRouteChange = (to: string) => {
-    // console.log(to);
-    this.setState({
-      route: to
-    });
     location.hash = to
   }
 
@@ -37,7 +33,6 @@ class App extends React.Component<any, State> {
   }
 
   setRoute = () => {
-    // console.log(location.pathname);
     let hash = location.hash.split('#')[1];
     let route = '/home';
     switch(hash) {
