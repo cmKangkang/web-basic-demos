@@ -4,7 +4,7 @@ import getKey from './key.js';
 export function addPill(pill: IPill): string {
   let key = getKey();
   pill.key = key;
-  let pills: Array<IPill> = JSON.parse(localStorage.getItem('timepills'));
+  let pills: Array<IPill> = JSON.parse(localStorage.getItem('timepills')) || [];
   pills.push(pill);
   localStorage.setItem('timepills', JSON.stringify(pills));
   return key;
