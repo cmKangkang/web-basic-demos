@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>防抖与节流</h1>
+  <p>防抖: 是将多次执行变为最后一次执行。防止事件在一段事件内多次调用。若时间段内再次触发，则重新开始计时。</p>
+  <p>节流: 是将多次执行变成每隔一段时间执行。该时间段内只执行一次</p>
+  <div class="input">
+    <label for="">防抖测试</label>
+    <input type="text" class="debounce" placeholder="防抖"/>
+    <input type="text" class="value1">
+    <br><br>
+    <label for="">节流测试</label>
+    <input type="text" class="throttle" placeholder="节流"/>
+    <input type="text" class="value2">
+  </div>
+
+  <div class="mouse">
+    <div class="show1">
+      防抖方式：<br>
+      鼠标当前位置：
+    </div>
+
+    <div class="show2">
+      节流方式：<br>
+      鼠标当前位置：
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+  <script>
+    let vn1 = document.querySelector(".input .debounce");
+    let v1 = document.querySelector(".input .value1");
+    vn1.addEventListener('keyup', debounce(() => {
+      console.log(vn1.value);
+      v1.value = vn1.value;
+    }), 500);
+
+    let vn2 = document.querySelector(".input .throttle");
+    let v2 = document.querySelector(".input .value2");
+    vn2.addEventListener('keyup', throttle(() => {
+      console.log(vn2.value);
+      v2.value = vn2.value;
+    }), 500);
+
+    let node1 = document.querySelector('.mouse .show1');
+    let node2 = document.querySelector('.mouse .show2');
+
+    window.addEventListener('mousemove', debounce((ev) => {
+      node1.innerHTML = `
+      防抖方式：<br>
+      鼠标当前位置：<br>
+      clientX: ${ev.clientX}; clientY: ${ev.clientY}. <br>
+      offsetX: ${ev.offsetX}; offsetY: ${ev.offsetY}. <br>
+      pageX: ${ev.pageX}; pageY: ${ev.pageY}.
+      `;
+    }, 500));
+
+    window.addEventListener('mousemove', throttle((ev) => {
+      node2.innerHTML = `
+      节流方式：<br>
+      鼠标当前位置：<br>
+      clientX: ${ev.clientX}; clientY: ${ev.clientY}. <br>
+      offsetX: ${ev.offsetX}; offsetY: ${ev.offsetY}. <br>
+      pageX: ${ev.pageX}; pageY: ${ev.pageY}.
+      `;
+    }, 500));
+  </script>
+  <style>
+    .mouse {
+      margin: auto;
+      width: 200px;
+    }
+
+    .show1, .show2 {
+      border: 1px solid #000;
+      height: 150px;
+      margin-top: 30px;
+    }
+  </style>
+</body>
+</html>
