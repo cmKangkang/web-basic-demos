@@ -17,12 +17,20 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background: #f8f8f8;
+  color: #666;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 26px;
 }
 
 .btns {
@@ -36,7 +44,7 @@ body {
   align-items: center;
   min-width: 450px;
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 .container::before {
@@ -63,11 +71,11 @@ body {
 
 .circle {
   background-color: var(--bg-color);
-  color: #999;
   border-radius: 50%;
   border: 4px solid var(--line-empty);
   height: 30px;
   width: 30px;
+  color: #999;
   text-align: center;
   /* border-box, 边框宽度为3px，故内容高度为30 - 2*3 = 24px */
   line-height: 22px;
